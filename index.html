@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jebel Ali Free Zone (Dubai)</title>
+  <title>Jebel Ali Free Zone | Dubai</title>
+  <meta name="description" content="Moderne Infowebsite zur Jebel Ali Free Zone in Dubai." />
   <style>
     :root {
-      --bg: #f4f7fb;
+      --bg: #0b1220;
+      --bg-soft: #111a2e;
+      --surface: rgba(255,255,255,0.08);
+      --surface-strong: rgba(255,255,255,0.12);
       --card: #ffffff;
-      --text: #1f2937;
-      --muted: #5b6472;
-      --primary: #0f4c81;
-      --primary-dark: #0a3458;
-      --accent: #dbeafe;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --radius: 18px;
-      --max-width: 1180px;
+      --text: #0f172a;
+      --muted: #475569;
+      --white: #ffffff;
+      --line: rgba(255,255,255,0.12);
+      --primary: #38bdf8;
+      --primary-2: #0ea5e9;
+      --accent: #22c55e;
+      --shadow: 0 20px 50px rgba(0,0,0,0.18);
+      --radius: 22px;
+      --max: 1180px;
     }
 
     * {
@@ -29,15 +34,10 @@
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, Helvetica, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background: #f8fafc;
       line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -45,8 +45,13 @@
       display: block;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .container {
-      width: min(92%, var(--max-width));
+      width: min(92%, var(--max));
       margin: 0 auto;
     }
 
@@ -55,95 +60,147 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      background: rgba(11, 18, 32, 0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 14px 0;
+      justify-content: space-between;
       gap: 20px;
+      padding: 16px 0;
     }
 
-    .brand {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 1.05rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.95rem;
-      color: var(--muted);
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.96rem;
+      transition: 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: white;
     }
 
     /* HERO */
     .hero {
       position: relative;
-      min-height: 88vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      color: white;
+      overflow: hidden;
       background:
-        linear-gradient(rgba(8, 22, 41, 0.6), rgba(8, 22, 41, 0.65)),
-        url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+        linear-gradient(120deg, rgba(6,10,20,0.86), rgba(10,25,47,0.70)),
+        url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      color: var(--white);
     }
 
-    .hero-content {
-      max-width: 760px;
-      padding: 80px 0;
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56,189,248,0.20), transparent 30%),
+        radial-gradient(circle at 85% 30%, rgba(14,165,233,0.16), transparent 28%),
+        linear-gradient(to top, rgba(248,250,252,1) 0%, rgba(248,250,252,0) 18%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      padding: 80px 0 120px;
     }
 
     .eyebrow {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255,255,255,0.22);
-      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
       border-radius: 999px;
+      padding: 10px 16px;
       font-size: 0.9rem;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px rgba(34,197,94,0.8);
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4.4rem);
-      line-height: 1.08;
       margin: 0 0 18px;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      max-width: 760px;
     }
 
     .hero p {
+      margin: 0 0 30px;
+      max-width: 650px;
       font-size: 1.08rem;
-      max-width: 700px;
-      color: rgba(255,255,255,0.92);
-      margin-bottom: 28px;
+      color: rgba(255,255,255,0.88);
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-bottom: 30px;
     }
 
     .btn {
-      padding: 13px 22px;
+      padding: 14px 22px;
       border-radius: 999px;
       font-weight: 700;
-      border: 2px solid transparent;
       transition: 0.2s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .btn-primary {
-      background: white;
-      color: var(--primary-dark);
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      box-shadow: 0 12px 30px rgba(14,165,233,0.35);
     }
 
     .btn-primary:hover {
@@ -151,205 +208,262 @@
     }
 
     .btn-secondary {
-      border-color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.22);
       color: white;
-      background: transparent;
+      background: rgba(255,255,255,0.07);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.12);
     }
 
-    /* STATS */
-    .stats {
-      margin-top: -70px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .stats-grid {
+    .hero-stats {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 12px;
     }
 
-    .stat-card {
-      background: var(--card);
-      border-radius: var(--radius);
+    .hero-stat {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat span {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 28px;
+      padding: 26px;
+      backdrop-filter: blur(16px);
       box-shadow: var(--shadow);
-      padding: 24px;
-      border: 1px solid var(--border);
-      text-align: center;
     }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 6px;
+    .hero-panel h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.25rem;
     }
 
-    .stat-label {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .hero-panel ul {
+      padding-left: 18px;
+      margin: 0;
+      color: rgba(255,255,255,0.9);
     }
 
-    /* SECTION */
+    .hero-panel li {
+      margin-bottom: 10px;
+    }
+
+    /* MAIN SECTION */
     section {
       padding: 90px 0;
     }
 
-    .section-header {
+    .section-head {
       max-width: 760px;
       margin-bottom: 34px;
     }
 
-    .section-tag {
-      color: var(--primary);
-      font-weight: 700;
-      letter-spacing: 0.04em;
+    .section-head .tag {
+      color: var(--primary-2);
+      font-weight: 800;
       text-transform: uppercase;
-      font-size: 0.83rem;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
       margin-bottom: 12px;
     }
 
-    .section-header h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    .section-head h2 {
       margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #0f172a;
     }
 
-    .section-header p {
-      color: var(--muted);
+    .section-head p {
       margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
 
-    /* TWO COLUMN */
-    .two-col {
+    .grid-2 {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items: center;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .card-body {
-      padding: 28px;
-    }
-
-    .card-body h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      color: var(--primary-dark);
-    }
-
-    .card-body p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .feature-list li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .feature-list li:last-child {
-      border-bottom: none;
-    }
-
-    .card-image {
-      height: 100%;
-      min-height: 360px;
-      object-fit: cover;
-    }
-
-    /* GRID CARDS */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .info-card {
+    .card {
       background: var(--card);
-      border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px;
-    }
-
-    .info-card h3 {
-      margin-top: 0;
-      color: var(--primary-dark);
-      margin-bottom: 12px;
-    }
-
-    .info-card p,
-    .info-card li {
-      color: var(--muted);
-    }
-
-    .info-card ul {
-      padding-left: 18px;
-      margin: 0;
-    }
-
-    /* IMAGE BANNER */
-    .image-banner {
-      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
       overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+      border: 1px solid #e2e8f0;
     }
 
-    .image-banner img {
+    .card-body {
+      padding: 28px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #0f172a;
+      font-size: 1.28rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .card-image {
       width: 100%;
-      height: 430px;
+      height: 100%;
+      min-height: 380px;
       object-fit: cover;
     }
 
-    /* TIMELINE STYLE */
-    .highlight-box {
-      background: linear-gradient(135deg, #eef5ff, #ffffff);
-      border: 1px solid #d9e7ff;
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list li {
+      padding: 14px 0;
+      border-bottom: 1px solid #e2e8f0;
+      color: var(--muted);
+    }
+
+    .list li:last-child {
+      border-bottom: none;
+    }
+
+    .list strong {
+      color: #0f172a;
+    }
+
+    .info-box {
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border: 1px solid #dbeafe;
       border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: var(--shadow);
+      padding: 26px;
     }
 
-    .highlight-box h3 {
-      margin-top: 0;
-      color: var(--primary-dark);
-    }
-
-    .highlight-box ul {
+    .info-box ul {
       margin: 0;
       padding-left: 18px;
     }
 
-    .highlight-box li {
+    .info-box li {
       margin-bottom: 12px;
+      color: var(--muted);
     }
 
-    /* FOOTER */
+    .pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      background: #e0f2fe;
+      color: #075985;
+      border: 1px solid #bae6fd;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .stats-section {
+      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      color: white;
+    }
+
+    .stats-section .section-head h2,
+    .stats-section .section-head p {
+      color: white;
+    }
+
+    .stats-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card .num {
+      font-size: 2.15rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .stat-card .label {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.96rem;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .highlight p,
+    .highlight li {
+      color: rgba(255,255,255,0.94);
+    }
+
+    .highlight ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
     footer {
-      background: #0b2035;
-      color: rgba(255,255,255,0.88);
+      background: #0f172a;
+      color: rgba(255,255,255,0.82);
       padding: 34px 0;
-      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer-inner {
@@ -361,19 +475,19 @@
 
     .footer-inner p {
       margin: 0;
-      font-size: 0.95rem;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 980px) {
-      .stats-grid,
+    @media (max-width: 1020px) {
+      .hero-grid,
+      .grid-2,
       .grid-3,
-      .two-col {
+      .stats-cards {
         grid-template-columns: 1fr;
       }
 
-      .stats {
-        margin-top: -40px;
+      .hero-stats {
+        grid-template-columns: 1fr;
       }
 
       .card-image {
@@ -381,30 +495,26 @@
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 700px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
       }
 
       .hero {
-        min-height: 78vh;
+        min-height: auto;
       }
 
-      .hero-content {
-        padding: 70px 0;
+      .hero-grid {
+        padding: 60px 0 100px;
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
-      .section-header h2 {
-        font-size: 1.9rem;
-      }
-
-      .stat-number {
-        font-size: 1.7rem;
+      .section-head h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -413,84 +523,96 @@
 
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="brand">Jebel Ali Free Zone (Dubai)</div>
+      <a class="logo" href="#">
+        <div class="logo-badge">J</div>
+        <span>Jebel Ali Free Zone</span>
+      </a>
+
       <div class="nav-links">
         <a href="#lage">Lage</a>
         <a href="#standort">Standortfaktoren</a>
         <a href="#wirtschaft">Wirtschaft</a>
-        <a href="#daten">Wirtschaftsdaten</a>
+        <a href="#daten">Daten</a>
         <a href="#bedeutung">Bedeutung</a>
       </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="eyebrow">Sonderwirtschaftszone in Dubai</div>
-        <h1>Jebel Ali Free Zone</h1>
-        <p>
-          Die Jebel Ali Free Zone, kurz JAFZA, gehört zu den wichtigsten Handels- und Logistikstandorten der Welt.
-          Durch ihre Lage zwischen Hafen, Flughafen und internationalen Handelsrouten ist sie ein zentraler Motor
-          für die Wirtschaft Dubais und der Vereinigten Arabischen Emirate.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#lage">Jetzt entdecken</a>
-          <a class="btn btn-secondary" href="#daten">Wirtschaftsdaten</a>
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Sonderwirtschaftszone in Dubai
         </div>
+
+        <h1>Jebel Ali Free Zone als globales Tor zwischen Europa, Asien und Afrika</h1>
+
+        <p>
+          Die Jebel Ali Free Zone, kurz JAFZA, gehört zu den wichtigsten Handels- und
+          Logistikstandorten der Welt. Ihre Lage zwischen Hafen, Flughafen und internationalen
+          Handelsrouten macht sie zu einem zentralen Motor für Wirtschaft, Export und globale Vernetzung.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lage">Mehr entdecken</a>
+          <a class="btn btn-secondary" href="#daten">Zentrale Daten</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>1985</strong>
+            <span>Gründung der Zone</span>
+          </div>
+          <div class="hero-stat">
+            <strong>10.000+</strong>
+            <span>Unternehmen vor Ort</span>
+          </div>
+          <div class="hero-stat">
+            <strong>130.000+</strong>
+            <span>Arbeitsplätze</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <h3>Warum JAFZA so wichtig ist</h3>
+        <ul>
+          <li>Direkte Nähe zum Hafen Jebel Ali und zum Al Maktoum International Airport</li>
+          <li>Sehr gute Anbindung an globale Handelsrouten</li>
+          <li>Attraktiver Standort für internationale Unternehmen</li>
+          <li>Ein bedeutender Handels- und Logistikknotenpunkt der VAE</li>
+        </ul>
       </div>
     </div>
   </header>
 
-  <div class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">1985</div>
-          <div class="stat-label">Gründung</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">10.000+</div>
-          <div class="stat-label">Unternehmen</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">130.000+</div>
-          <div class="stat-label">Arbeitsplätze</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">57 km²</div>
-          <div class="stat-label">Fläche</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <section id="lage">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">1. Lage der Sonderwirtschaftszone</div>
-        <h2>Strategische Lage zwischen Hafen, Flughafen und Weltmärkten</h2>
+      <div class="section-head">
+        <div class="tag">1. Lage der Sonderwirtschaftszone</div>
+        <h2>Strategische Lage mit direkter Verbindung zu Hafen, Flughafen und Weltmarkt</h2>
         <p>
-          Die Jebel Ali Free Zone liegt in Dubai in den Vereinigten Arabischen Emiraten und profitiert von einer
-          besonders günstigen geografischen Lage.
+          Die geografische Position ist einer der größten Vorteile der Jebel Ali Free Zone.
+          Von Dubai aus können Unternehmen Märkte auf mehreren Kontinenten schnell erreichen.
         </p>
       </div>
 
-      <div class="two-col">
+      <div class="grid-2">
         <div class="card">
           <div class="card-body">
-            <h3>Warum die Lage so wichtig ist</h3>
+            <h3>Warum die Lage so stark ist</h3>
             <p>
-              Die JAFZA befindet sich im Westen von Dubai direkt neben dem Hafen Jebel Ali, dem größten Hafen
-              im Nahen Osten.
+              Die JAFZA liegt im Westen von Dubai direkt neben dem Hafen Jebel Ali,
+              dem größten Hafen im Nahen Osten.
             </p>
             <p>
-              Außerdem liegt sie zwischen dem Hafen und dem Al Maktoum International Airport. Dadurch können
-              Waren schnell per Schiff, Flugzeug und Straße transportiert werden.
+              Zusätzlich liegt die Zone zwischen Hafen und Al Maktoum International Airport.
+              Dadurch können Waren schnell per Schiff, Flugzeug und Straße transportiert werden.
             </p>
             <p>
-              Die Zone ist etwa 57 km² groß. Dubai liegt außerdem zwischen Europa, Asien und Afrika. Unternehmen
-              können von dort aus einen sehr großen Weltmarkt erreichen.
+              Die Fläche beträgt etwa 57 km². Weil Dubai zwischen Europa, Asien und Afrika liegt,
+              ist die Zone ein idealer Ausgangspunkt für internationalen Handel.
             </p>
           </div>
         </div>
@@ -506,41 +628,48 @@
     </div>
   </section>
 
-  <section id="standort" style="background: #eef4fa;">
+  <section id="standort" style="background:#f1f5f9;">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">2. Standortfaktoren</div>
-        <h2>Warum sich Unternehmen dort ansiedeln</h2>
+      <div class="section-head">
+        <div class="tag">2. Standortfaktoren</div>
+        <h2>Warum internationale Unternehmen sich dort ansiedeln</h2>
         <p>
-          Die Jebel Ali Free Zone bietet Firmen starke wirtschaftliche Vorteile und eine moderne Infrastruktur.
+          Die Zone verbindet wirtschaftliche Vorteile mit moderner Infrastruktur und globaler Erreichbarkeit.
         </p>
       </div>
 
       <div class="grid-3">
-        <div class="info-card">
-          <h3>Steuerliche Vorteile</h3>
-          <ul>
-            <li>0 % Import- und Exportzölle innerhalb der Zone</li>
-            <li>Keine Beschränkung für ausländische Firmenbesitzer</li>
-          </ul>
+        <div class="card">
+          <div class="card-body">
+            <h3>Wirtschaftliche Vorteile</h3>
+            <ul class="list">
+              <li><strong>0 % Import- und Exportzölle</strong> innerhalb der Zone</li>
+              <li><strong>Keine Beschränkung</strong> für ausländische Firmenbesitzer</li>
+              <li><strong>Attraktive Bedingungen</strong> für internationale Investoren</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="info-card">
-          <h3>Infrastruktur</h3>
-          <ul>
-            <li>Direkte Nähe zu Hafen, Flughafen und Autobahnen</li>
-            <li>Sehr gute Transport- und Liefermöglichkeiten</li>
-            <li>Viele Lagerhallen, Büros und Industrieflächen</li>
-          </ul>
+        <div class="card">
+          <div class="card-body">
+            <h3>Moderne Infrastruktur</h3>
+            <ul class="list">
+              <li><strong>Direkte Nähe</strong> zu Hafen, Flughafen und Autobahnen</li>
+              <li><strong>Lagerhallen, Büros und Industrieflächen</strong> in großer Zahl</li>
+              <li><strong>Schnelle Transportwege</strong> für Warenströme</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="info-card">
-          <h3>Globale Anbindung</h3>
-          <ul>
-            <li>Nähe zu wichtigen Handelsrouten</li>
-            <li>Gute Verbindung zwischen Europa, Asien und Afrika</li>
-            <li>Attraktiver Standort für internationale Firmen</li>
-          </ul>
+        <div class="card">
+          <div class="card-body">
+            <h3>Globale Vernetzung</h3>
+            <ul class="list">
+              <li><strong>Nähe zu Handelsrouten</strong> zwischen Kontinenten</li>
+              <li><strong>Standortvorteil</strong> zwischen Europa, Asien und Afrika</li>
+              <li><strong>Besonders attraktiv</strong> für Logistik und Export</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -548,30 +677,31 @@
 
   <section id="wirtschaft">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">3. Schwerpunkt der Wirtschaft</div>
-        <h2>Internationale Unternehmen aus vielen Branchen</h2>
+      <div class="section-head">
+        <div class="tag">3. Schwerpunkt der Wirtschaft</div>
+        <h2>Viele internationale Firmen aus Handel, Logistik und Industrie</h2>
         <p>
-          In der Zone arbeiten viele internationale Firmen. Besonders stark vertreten sind Branchen,
-          die vom weltweiten Handel und von schneller Logistik profitieren.
+          In der JAFZA arbeiten Unternehmen aus verschiedenen Wirtschaftsbereichen, vor allem dort,
+          wo schnelle Lieferketten und internationale Märkte entscheidend sind.
         </p>
       </div>
 
-      <div class="two-col">
-        <div class="highlight-box">
-          <h3>Typische Branchen in der JAFZA</h3>
-          <ul>
-            <li>Logistik und Transport</li>
-            <li>Handel und Export</li>
-            <li>Elektronik</li>
-            <li>Automobilindustrie</li>
-            <li>Petrochemie</li>
-            <li>Lebensmittelindustrie</li>
-          </ul>
+      <div class="grid-2">
+        <div class="info-box">
+          <h3>Typische Branchen</h3>
+          <div class="pill-grid">
+            <div class="pill">Logistik und Transport</div>
+            <div class="pill">Handel und Export</div>
+            <div class="pill">Elektronik</div>
+            <div class="pill">Automobilindustrie</div>
+            <div class="pill">Petrochemie</div>
+            <div class="pill">Lebensmittelindustrie</div>
+          </div>
         </div>
 
-        <div class="image-banner">
+        <div class="card">
           <img
+            class="card-image"
             src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
             alt="Container und internationale Logistik"
           />
@@ -580,42 +710,32 @@
     </div>
   </section>
 
-  <section id="daten" style="background: #eef4fa;">
+  <section id="daten" class="stats-section">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">4. Zentrale Wirtschaftsdaten</div>
+      <div class="section-head">
+        <div class="tag" style="color:#7dd3fc;">4. Zentrale Wirtschaftsdaten</div>
         <h2>Wichtige Zahlen zur Jebel Ali Free Zone</h2>
         <p>
-          Die wirtschaftliche Bedeutung der Zone zeigt sich besonders in ihren Kennzahlen.
+          Die wirtschaftliche Bedeutung der Zone zeigt sich besonders deutlich in ihren Kennzahlen.
         </p>
       </div>
 
-      <div class="grid-3">
-        <div class="info-card">
-          <h3>Grunddaten</h3>
-          <ul>
-            <li>Gegründet im Jahr 1985</li>
-            <li>Fläche von etwa 57 km²</li>
-            <li>Eine der größten Sonderwirtschaftszonen der Welt</li>
-          </ul>
+      <div class="stats-cards">
+        <div class="stat-card">
+          <div class="num">1985</div>
+          <div class="label">Gründungsjahr der Sonderwirtschaftszone</div>
         </div>
-
-        <div class="info-card">
-          <h3>Unternehmen und Arbeit</h3>
-          <ul>
-            <li>Über 10.000 Unternehmen</li>
-            <li>Firmen aus mehr als 150 Ländern</li>
-            <li>Mehr als 130.000 Arbeitsplätze</li>
-          </ul>
+        <div class="stat-card">
+          <div class="num">10.000+</div>
+          <div class="label">Unternehmen aus mehr als 150 Ländern</div>
         </div>
-
-        <div class="info-card">
-          <h3>Internationale Bedeutung</h3>
-          <ul>
-            <li>Über 100 große internationale Konzerne mit Standorten</li>
-            <li>Wichtiger Beitrag zur Wirtschaft Dubais</li>
-            <li>Enge Verbindung mit dem Hafen Jebel Ali</li>
-          </ul>
+        <div class="stat-card">
+          <div class="num">130.000+</div>
+          <div class="label">Arbeitsplätze in der Zone</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">100+</div>
+          <div class="label">Große internationale Konzerne mit Standorten</div>
         </div>
       </div>
     </div>
@@ -623,43 +743,85 @@
 
   <section id="bedeutung">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag">5. Bedeutung der Zone</div>
-        <h2>Ein globaler Handels- und Logistikknotenpunkt</h2>
+      <div class="section-head">
+        <div class="tag">5. Bedeutung der Zone</div>
+        <h2>Ein globaler Handels- und Logistikknotenpunkt der VAE</h2>
         <p>
-          Die Jebel Ali Free Zone ist nicht nur für Dubai wichtig, sondern auch für den internationalen Handel
-          der Vereinigten Arabischen Emirate.
+          Die JAFZA ist weit mehr als nur ein Industriegebiet. Sie ist ein zentraler Bestandteil des
+          internationalen Handels der Vereinigten Arabischen Emirate.
         </p>
       </div>
 
-      <div class="two-col">
-        <div class="card">
-          <div class="card-body">
-            <h3>Zusammenfassung</h3>
-            <ul class="feature-list">
-              <li>Eine der größten Sonderwirtschaftszonen der Welt</li>
-              <li>Wichtiger globaler Handels- und Logistikknotenpunkt</li>
-              <li>Entscheidend für den internationalen Handel der VAE</li>
-              <li>Starker Standort für internationale Unternehmen</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-image"
-            src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80"
-            alt="Moderne Skyline und Wirtschaft in Dubai"
-          />
-        </div>
+      <div class="highlight">
+        <h3>Zusammenfassung</h3>
+        <ul>
+          <li>Eine der größten Sonderwirtschaftszonen der Welt</li>
+          <li>Wichtiger globaler Handels- und Logistikstandort</li>
+          <li>Entscheidend für den internationalen Handel der VAE</li>
+          <li>Starker und attraktiver Standort für internationale Unternehmen</li>
+        </ul>
       </div>
     </div>
   </section>
+  <section id="steckbrief" style="padding-top: 20px;">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">6. Steckbrief</div>
+      <h2>Steckbrief zur Präsentation</h2>
+      <p>
+        Dieser Steckbrief fasst die wichtigsten Informationen zur Jebel Ali Free Zone kurz und übersichtlich zusammen
+        und eignet sich gut für eine Präsentation in Partnerarbeit.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h3>Jebel Ali Free Zone (JAFZA) – Steckbrief</h3>
+        <ul class="list">
+          <li><strong>Name:</strong> Jebel Ali Free Zone (JAFZA)</li>
+          <li><strong>Ort:</strong> Dubai, Vereinigte Arabische Emirate (VAE)</li>
+          <li><strong>Gründung:</strong> 1985</li>
+          <li><strong>Größe:</strong> etwa 57 km²</li>
+          <li><strong>Lage:</strong> direkt am Hafen Jebel Ali und nahe dem Al Maktoum International Airport</li>
+          <li><strong>Besondere Vorteile:</strong> 0 % Import- und Exportzölle, sehr gute Infrastruktur, internationale Anbindung</li>
+          <li><strong>Wichtige Branchen:</strong> Logistik, Handel, Elektronik, Automobilindustrie, Petrochemie, Lebensmittelindustrie</li>
+          <li><strong>Unternehmen:</strong> über 10.000 Firmen aus mehr als 150 Ländern</li>
+          <li><strong>Arbeitsplätze:</strong> mehr als 130.000</li>
+          <li><strong>Bedeutung:</strong> wichtiger globaler Handels- und Logistikknotenpunkt der VAE</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 24px;">
+      <div class="card">
+        <div class="card-body">
+          <h3>Person 1 kann vorstellen</h3>
+          <ul class="list">
+            <li>Lage der Sonderwirtschaftszone</li>
+            <li>Warum die Lage wichtig ist</li>
+            <li>Standortfaktoren und Vorteile für Unternehmen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h3>Person 2 kann vorstellen</h3>
+          <ul class="list">
+            <li>Wirtschaftliche Schwerpunkte</li>
+            <li>Zentrale Wirtschaftsdaten</li>
+            <li>Bedeutung der JAFZA für Dubai und die VAE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <footer>
     <div class="container footer-inner">
-      <p><strong>Jebel Ali Free Zone (Dubai)</strong></p>
-      <p>Seriöse Informationsseite als HTML-Projekt</p>
+      <p><strong>Jebel Ali Free Zone | Dubai</strong></p>
+      <p>Moderne Infowebsite als HTML-Projekt</p>
     </div>
   </footer>
 
