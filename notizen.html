@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Passwortgeschützter interner Bereich mit den wichtigsten Informationen und einer vollständigen Präsentationsstruktur zu Atomunfällen für zwei Personen." />
   <meta name="author" content="Physik Referat" />
-  <title>Secret Bereich | Atomunfälle im historischen Blick</title>
+  <title>Notizen Bereich | Atomunfälle im historischen Blick</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="secret-page">
+<body class="Notizen-page">
   <div class="top-info-bar">
     <div class="page-wrap top-info-inner">
       <span>Interner Bereich · Präsentationsmaterial</span>
@@ -22,7 +22,7 @@
         <span class="brand-mark">A</span>
         <span class="brand-text">
           <strong>Atomunfälle</strong>
-          <small>Secret Präsentationsbereich</small>
+          <small>Notizen Präsentationsbereich</small>
         </span>
       </a>
 
@@ -40,13 +40,13 @@
         <a href="unfaelle.html">Unfälle</a>
         <a href="vergleich.html">Vergleich</a>
         <a href="quellen.html">Quellen</a>
-        <a class="active secret-link" href="notizen.html">Secret</a>
+        <a class="active Notizen-link" href="notizen.html">Notizen</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="secret-lock-box" id="lockBox">
+    <section class="Notizen-lock-box" id="lockBox">
       <p class="kicker">Geschützter Bereich</p>
       <h1>Passwort eingeben</h1>
       <p>
@@ -63,10 +63,10 @@
       </div>
     </section>
 
-    <section id="secretContent" style="display: none;">
+    <section id="NotizenContent" style="display: none;">
       <section class="subpage-hero">
         <div class="page-wrap">
-          <p class="kicker">Secret Bereich</p>
+          <p class="kicker">Notizen Bereich</p>
           <h1>Präsentation: Atomunfälle im historischen Blick</h1>
           <p>
             Hier findet ihr die wichtigsten Informationen und eine komplette Präsentation für zwei Personen. Die Folienstichpunkte sind kurz gehalten, die Karteikarten sind in einfacher Sprache geschrieben und können fast direkt abgelesen werden.
@@ -81,7 +81,7 @@
             <strong>Interne Vorbereitung</strong>
             <p>Keine echte Anzeige: Dieser Bereich ist nur als internes Arbeitsmaterial für die Präsentation gedacht.</p>
           </div>
-          <span class="ad-fake-button">Secret aktiv</span>
+          <span class="ad-fake-button">Notizen aktiv</span>
         </aside>
       </div>
 
@@ -687,7 +687,7 @@
 
         <aside class="side-column">
           <div class="side-card">
-            <h3>Secret-Navigation</h3>
+            <h3>Notizen-Navigation</h3>
             <ul class="clean-list dot-list">
               <li><a href="#kurzfassung">Wichtigste Infos</a></li>
               <li><a href="#rollen">Rollenaufteilung</a></li>
@@ -739,7 +739,7 @@
     <div class="page-wrap footer-grid">
       <div>
         <strong>Atomunfälle im historischen Blick</strong>
-        <p>Interner Secret-Bereich mit Präsentationsstruktur, Karteikarten und Kurzmaterial.</p>
+        <p>Interner Notizen-Bereich mit Präsentationsstruktur, Karteikarten und Kurzmaterial.</p>
       </div>
       <div>
         <strong>Navigation</strong>
@@ -761,29 +761,29 @@
   </footer>
 
   <script>
-    const SECRET_PASSWORD = 'erwin1234';
-    const ACCESS_KEY = 'atom_secret_access';
+    const Notizen_PASSWORD = 'erwin1234';
+    const ACCESS_KEY = 'atom_Notizen_access';
 
     const menuButton = document.getElementById('menuButton');
     const mainNav = document.getElementById('mainNav');
     const lockBox = document.getElementById('lockBox');
-    const secretContent = document.getElementById('secretContent');
+    const NotizenContent = document.getElementById('NotizenContent');
     const passwordForm = document.getElementById('passwordForm');
     const passwordInput = document.getElementById('passwordInput');
     const passwordMessage = document.getElementById('passwordMessage');
 
-    function showSecretContent() {
+    function showNotizenContent() {
       if (lockBox) lockBox.style.display = 'none';
-      if (secretContent) secretContent.style.display = 'block';
+      if (NotizenContent) NotizenContent.style.display = 'block';
     }
 
     function showLockBox() {
       if (lockBox) lockBox.style.display = 'block';
-      if (secretContent) secretContent.style.display = 'none';
+      if (NotizenContent) NotizenContent.style.display = 'none';
     }
 
     if (sessionStorage.getItem(ACCESS_KEY) === 'true') {
-      showSecretContent();
+      showNotizenContent();
     } else {
       showLockBox();
     }
@@ -793,9 +793,9 @@
         event.preventDefault();
         const enteredPassword = passwordInput.value.trim();
 
-        if (enteredPassword === SECRET_PASSWORD) {
+        if (enteredPassword === Notizen_PASSWORD) {
           sessionStorage.setItem(ACCESS_KEY, 'true');
-          showSecretContent();
+          showNotizenContent();
         } else {
           passwordMessage.textContent = 'Falsches Passwort. Versuch es nochmal.';
           passwordMessage.style.color = '#a33a2b';
