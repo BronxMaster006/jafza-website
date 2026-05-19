@@ -40,7 +40,7 @@
         <a href="unfaelle.html">Unfälle</a>
         <a href="vergleich.html">Vergleich</a>
         <a href="quellen.html">Quellen</a>
-        <a class="secret-link" href="notizen.html" data-secret-link>Secret</a>
+        <a class="Notizen-link" href="notizen.html" data-Notizen-link>Notizen</a>
       </nav>
     </div>
   </header>
@@ -338,21 +338,21 @@
 
     <section class="page-wrap section-block">
       <div class="section-heading">
-        <p class="kicker">Secret-Bereich</p>
+        <p class="kicker">Notizen-Bereich</p>
         <h2>Interner Bereich für Präsentationsmaterial</h2>
         <p>
-          Im Secret-Bereich liegen später die wichtigsten Infos und die fertige Struktur für eure PowerPoint-Präsentation: Folienüberschriften, Stichpunkte und Karteikarten zum Ablesen für zwei Personen.
+          Im Notizen-Bereich liegen später die wichtigsten Infos und die fertige Struktur für eure PowerPoint-Präsentation: Folienüberschriften, Stichpunkte und Karteikarten zum Ablesen für zwei Personen.
         </p>
       </div>
 
-      <div class="secret-preview-card">
+      <div class="Notizen-preview-card">
         <div>
           <h3>Passwortgeschützter Bereich</h3>
           <p>
             Der Bereich ist für Gabriel und Erwin gedacht. Das Passwort wird beim Öffnen abgefragt. Hinweis: Das ist ein einfacher Frontend-Schutz für eine Schulwebsite und keine echte technische Sicherheit.
           </p>
         </div>
-        <a class="button button-primary" href="notizen.html" data-secret-link>Secret öffnen</a>
+        <a class="button button-primary" href="notizen.html" data-Notizen-link>Notizen öffnen</a>
       </div>
     </section>
 
@@ -423,15 +423,15 @@
       });
     }
 
-    const secretLinks = document.querySelectorAll('[data-secret-link]');
+    const NotizenLinks = document.querySelectorAll('[data-Notizen-link]');
 
-    secretLinks.forEach((link) => {
+    NotizenLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        const password = prompt('Passwort für den Secret-Bereich eingeben:');
+        const password = prompt('Passwort für den Notizen-Bereich eingeben:');
 
         if (password === 'erwin1234') {
-          sessionStorage.setItem('atom_secret_access', 'true');
+          sessionStorage.setItem('atom_Notizen_access', 'true');
           window.location.href = link.getAttribute('href');
         } else if (password !== null) {
           alert('Falsches Passwort. Zugriff verweigert.');
