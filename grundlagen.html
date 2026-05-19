@@ -40,7 +40,7 @@
         <a href="unfaelle.html">Unfälle</a>
         <a href="vergleich.html">Vergleich</a>
         <a href="quellen.html">Quellen</a>
-        <a class="secret-link" href="notizen.html" data-secret-link>Secret</a>
+        <a class="Notizen-link" href="notizen.html" data-Notizen-link>Notizen</a>
       </nav>
     </div>
   </header>
@@ -417,15 +417,15 @@
       });
     }
 
-    const secretLinks = document.querySelectorAll('[data-secret-link]');
+    const NotizenLinks = document.querySelectorAll('[data-Notizen-link]');
 
-    secretLinks.forEach((link) => {
+    NotizenLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        const password = prompt('Passwort für den Secret-Bereich eingeben:');
+        const password = prompt('Passwort für den Notizen-Bereich eingeben:');
 
         if (password === 'erwin1234') {
-          sessionStorage.setItem('atom_secret_access', 'true');
+          sessionStorage.setItem('atom_Notizen_access', 'true');
           window.location.href = link.getAttribute('href');
         } else if (password !== null) {
           alert('Falsches Passwort. Zugriff verweigert.');
