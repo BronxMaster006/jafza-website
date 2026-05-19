@@ -3,828 +3,954 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jebel Ali Free Zone | Dubai</title>
-  <meta name="description" content="Moderne Infowebsite zur Jebel Ali Free Zone in Dubai." />
+  <title>Atomunfälle im historischen Blick | Physik-Dossier</title>
   <style>
     :root {
-      --bg: #0b1220;
-      --bg-soft: #111a2e;
-      --surface: rgba(255,255,255,0.08);
-      --surface-strong: rgba(255,255,255,0.12);
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --white: #ffffff;
-      --line: rgba(255,255,255,0.12);
-      --primary: #38bdf8;
-      --primary-2: #0ea5e9;
-      --accent: #22c55e;
-      --shadow: 0 20px 50px rgba(0,0,0,0.18);
-      --radius: 22px;
-      --max: 1180px;
+      --paper: #faf7f1;
+      --bg: #ebe7df;
+      --text: #1d2430;
+      --muted: #5e6673;
+      --line: #d7d0c4;
+      --blue: #224c73;
+      --blue-dark: #152f49;
+      --green: #397060;
+      --red: #9f2d20;
+      --yellow: #f0c15b;
+      --box: #ffffff;
+      --ad: #f7f2e7;
+      --shadow: 0 10px 28px rgba(31, 41, 55, 0.10);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
       color: var(--text);
-      background: #f8fafc;
-      line-height: 1.6;
+      line-height: 1.68;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    a { color: inherit; text-decoration: none; }
+
+    .site-note {
+      background: #152f49;
+      color: rgba(255,255,255,.88);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      padding: 8px 18px;
+      text-align: center;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .masthead {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
     }
 
-    .container {
-      width: min(92%, var(--max));
+    .masthead-inner {
+      max-width: 1180px;
       margin: 0 auto;
+      padding: 24px 18px 18px;
     }
 
-    /* NAV */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(14px);
-      background: rgba(11, 18, 32, 0.82);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-inner {
+    .meta-row {
       display: flex;
-      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-end;
       justify-content: space-between;
       gap: 20px;
-      padding: 16px 0;
+      border-top: 3px solid var(--text);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0 12px;
     }
 
-    .logo {
+    .site-title {
+      font-size: clamp(34px, 6vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .site-subtitle {
+      max-width: 360px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 10px 18px;
       display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .logo-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 1rem;
-      box-shadow: var(--shadow);
-    }
-
-    .nav-links {
-      display: flex;
+      gap: 10px;
       flex-wrap: wrap;
-      gap: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .nav-links a {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.96rem;
-      transition: 0.2s ease;
+    .nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--blue-dark);
     }
 
-    .nav-links a:hover {
-      color: white;
+    .nav a:hover { background: #e4ded2; }
+
+    .ad-strip {
+      max-width: 1180px;
+      margin: 18px auto 0;
+      padding: 0 18px;
     }
 
-    /* HERO */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(120deg, rgba(6,10,20,0.86), rgba(10,25,47,0.70)),
-        url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
-      color: var(--white);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(56,189,248,0.20), transparent 30%),
-        radial-gradient(circle at 85% 30%, rgba(14,165,233,0.16), transparent 28%),
-        linear-gradient(to top, rgba(248,250,252,1) 0%, rgba(248,250,252,0) 18%);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
+    .ad-banner {
+      background: linear-gradient(90deg, #f7f2e7, #ffffff 55%, #edf4f3);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 14px 18px;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      grid-template-columns: 86px minmax(0, 1fr) auto;
+      gap: 16px;
       align-items: center;
-      padding: 80px 0 120px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .ad-label {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 34px;
+      border: 1px solid #c9b98d;
+      background: #fff8dd;
+      color: #6d4d00;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .ad-banner strong { color: var(--blue-dark); }
+    .ad-banner p { color: var(--muted); font-size: 14px; }
+    .ad-button {
+      border: 1px solid var(--blue);
+      color: var(--blue);
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .layout {
+      max-width: 1180px;
+      margin: 24px auto 0;
+      padding: 0 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    main, aside { min-width: 0; }
+
+    .hero {
+      background: var(--box);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 34px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 0.9rem;
-      margin-bottom: 22px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 14px rgba(34,197,94,0.8);
-    }
-
-    .hero h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      line-height: 1.04;
-      letter-spacing: -0.03em;
-      max-width: 760px;
-    }
-
-    .hero p {
-      margin: 0 0 30px;
-      max-width: 650px;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-2));
-      color: white;
-      box-shadow: 0 12px 30px rgba(14,165,233,0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.22);
-      color: white;
-      background: rgba(255,255,255,0.07);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    .hero-stat {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 18px;
-      padding: 18px;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-size: 1.6rem;
-      color: white;
-      margin-bottom: 4px;
-    }
-
-    .hero-stat span {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.8);
-    }
-
-    .hero-panel {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 28px;
-      padding: 26px;
-      backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-panel h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 1.25rem;
-    }
-
-    .hero-panel ul {
-      padding-left: 18px;
-      margin: 0;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .hero-panel li {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 13px;
       margin-bottom: 10px;
     }
 
-    /* MAIN SECTION */
+    h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 20px;
+      color: #3a4350;
+      border-left: 5px solid var(--yellow);
+      padding-left: 16px;
+      margin-bottom: 20px;
+    }
+
+    .byline {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
     section {
-      padding: 90px 0;
+      background: var(--box);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-top: 22px;
     }
 
     .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
     }
 
-    .section-head .tag {
-      color: var(--primary-2);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.82rem;
-      margin-bottom: 12px;
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
     }
 
-    .section-head h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: #0f172a;
+    h3 {
+      font-size: 23px;
+      line-height: 1.15;
+      margin: 18px 0 8px;
     }
 
-    .section-head p {
-      margin: 0;
+    p { margin: 10px 0; }
+
+    .small {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
       color: var(--muted);
-      font-size: 1.02rem;
     }
 
-    .grid-2 {
+    .info-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
-    }
-
-    .card-body {
-      padding: 28px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      color: #0f172a;
-      font-size: 1.28rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .card-image {
-      width: 100%;
-      height: 100%;
-      min-height: 380px;
-      object-fit: cover;
-    }
-
-    .list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .list li {
-      padding: 14px 0;
-      border-bottom: 1px solid #e2e8f0;
-      color: var(--muted);
-    }
-
-    .list li:last-child {
-      border-bottom: none;
-    }
-
-    .list strong {
-      color: #0f172a;
-    }
-
-    .info-box {
-      background: linear-gradient(135deg, #eff6ff, #f8fafc);
-      border: 1px solid #dbeafe;
-      border-radius: var(--radius);
-      padding: 26px;
-    }
-
-    .info-box ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .info-box li {
-      margin-bottom: 12px;
-      color: var(--muted);
-    }
-
-    .pill-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
       margin-top: 16px;
     }
 
-    .pill {
-      background: #e0f2fe;
-      color: #075985;
-      border: 1px solid #bae6fd;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.94rem;
+    .info-card {
+      background: #f8f6f1;
+      border: 1px solid var(--line);
+      padding: 17px;
     }
 
-    .stats-section {
-      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
-      color: white;
+    .info-card strong {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--blue-dark);
+      margin-bottom: 5px;
     }
 
-    .stats-section .section-head h2,
-    .stats-section .section-head p {
-      color: white;
+    .notice {
+      background: #fff8e1;
+      border: 1px solid #e7cf80;
+      padding: 16px 18px;
+      margin: 18px 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .stats-cards {
+    .danger-box {
+      background: #fff1f0;
+      border-left: 5px solid var(--red);
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .definition {
+      background: #eef5f3;
+      border-left: 5px solid var(--green);
+      padding: 16px 18px;
+      margin: 18px 0;
+    }
+
+    .timeline {
+      border-left: 4px solid var(--blue);
+      margin: 20px 0 0 9px;
+      padding-left: 21px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 18px;
     }
 
-    .stat-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 22px;
-      padding: 26px;
-      box-shadow: var(--shadow);
+    .time-item {
+      position: relative;
+      background: #f8f6f1;
+      border: 1px solid var(--line);
+      padding: 18px;
     }
 
-    .stat-card .num {
-      font-size: 2.15rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--primary);
+    .time-item::before {
+      content: "";
+      position: absolute;
+      left: -31px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      background: var(--paper);
+      border: 4px solid var(--green);
+      border-radius: 50%;
     }
 
-    .stat-card .label {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.96rem;
-    }
-
-    .highlight {
-      background: linear-gradient(135deg, #0ea5e9, #0284c7);
-      color: white;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-    }
-
-    .highlight h3 {
-      margin-top: 0;
-      font-size: 1.5rem;
-    }
-
-    .highlight p,
-    .highlight li {
-      color: rgba(255,255,255,0.94);
-    }
-
-    .highlight ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    footer {
-      background: #0f172a;
-      color: rgba(255,255,255,0.82);
-      padding: 34px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .footer-inner {
+    .time-top {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 12px;
       flex-wrap: wrap;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .footer-inner p {
-      margin: 0;
+    .year {
+      font-weight: 900;
+      color: var(--blue-dark);
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 1020px) {
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .stats-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .card-image {
-        min-height: 280px;
-      }
+    .ines {
+      font-weight: 800;
+      color: var(--red);
+      background: #fde8e5;
+      border: 1px solid #f3bbb4;
+      padding: 3px 8px;
+      font-size: 12px;
     }
 
-    @media (max-width: 700px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
 
-      .hero {
-        min-height: auto;
-      }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
 
-      .hero-grid {
-        padding: 60px 0 100px;
-      }
+    th { background: #efe9dc; color: var(--blue-dark); }
+    td { background: #fff; }
 
-      .hero h1 {
-        font-size: 2.5rem;
-      }
+    ul, ol { padding-left: 23px; margin: 10px 0; }
+    li { margin: 6px 0; }
 
-      .section-head h2 {
-        font-size: 2rem;
-      }
+    .case {
+      border-top: 4px solid var(--blue);
+      background: #fcfbf8;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 20px;
+      margin-top: 17px;
+    }
+
+    .case h3 { margin-top: 0; }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 5px 9px;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .side-card,
+    .ad-card {
+      background: var(--box);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-bottom: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .side-card h3,
+    .ad-card h3 {
+      font-size: 18px;
+      margin-top: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .side-card p,
+    .ad-card p,
+    .side-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .ad-card {
+      background: var(--ad);
+      position: relative;
+    }
+
+    .ad-card::before {
+      content: "ANZEIGE";
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      color: #775d20;
+      background: #fff7dc;
+      border: 1px solid #c9b98d;
+      padding: 3px 7px;
+      margin-bottom: 10px;
+    }
+
+    .fake-logo {
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--blue-dark);
+      margin: 4px 0 8px;
+    }
+
+    .ad-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .source-list a {
+      display: block;
+      border: 1px solid var(--line);
+      background: #f8f6f1;
+      padding: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .source-list strong { display: block; color: var(--blue-dark); }
+    .source-list span { color: var(--muted); font-size: 14px; }
+
+    footer {
+      margin-top: 32px;
+      background: #141b25;
+      color: white;
+      padding: 28px 18px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    footer p {
+      max-width: 860px;
+      margin: 8px auto;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+    }
+
+    .credit {
+      margin-top: 12px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { order: -1; }
+      .site-subtitle { text-align: left; }
+    }
+
+    @media (max-width: 720px) {
+      .title-row, .ad-banner, .two-col, .info-grid { grid-template-columns: 1fr; display: grid; }
+      section, .hero { padding: 22px; }
+      .site-title { font-size: 40px; }
+      .ad-button { width: fit-content; }
     }
   </style>
 </head>
 <body>
+  <div class="site-note">Schulisches Physik-Dossier · Thema: Atomunfälle im historischen Blick · Quellen am Ende der Seite</div>
 
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="#">
-        <div class="logo-badge">J</div>
-        <span>Jebel Ali Free Zone</span>
-      </a>
-
-      <div class="nav-links">
-        <a href="#lage">Lage</a>
-        <a href="#standort">Standortfaktoren</a>
-        <a href="#wirtschaft">Wirtschaft</a>
-        <a href="#daten">Daten</a>
-        <a href="#bedeutung">Bedeutung</a>
+  <header class="masthead" id="start">
+    <div class="masthead-inner">
+      <div class="meta-row">
+        <span>Ausgabe: Physik Referat</span>
+        <span>Stand: Mai 2026</span>
+        <span>Schwerpunkt: Kerntechnik, Strahlung, Geschichte</span>
+      </div>
+      <div class="title-row">
+        <div class="site-title">Atomunfälle</div>
+        <p class="site-subtitle">Historische Fälle, physikalische Ursachen und Folgen für Sicherheitssysteme in Kernanlagen.</p>
       </div>
     </div>
-  </nav>
-
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">
-          <span class="dot"></span>
-          Sonderwirtschaftszone in Dubai
-        </div>
-
-        <h1>Jebel Ali Free Zone als globales Tor zwischen Europa, Asien und Afrika</h1>
-
-        <p>
-          Die Jebel Ali Free Zone, kurz JAFZA, gehört zu den wichtigsten Handels- und
-          Logistikstandorten der Welt. Ihre Lage zwischen Hafen, Flughafen und internationalen
-          Handelsrouten macht sie zu einem zentralen Motor für Wirtschaft, Export und globale Vernetzung.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#lage">Mehr entdecken</a>
-          <a class="btn btn-secondary" href="#daten">Zentrale Daten</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>1985</strong>
-            <span>Gründung der Zone</span>
-          </div>
-          <div class="hero-stat">
-            <strong>10.000+</strong>
-            <span>Unternehmen vor Ort</span>
-          </div>
-          <div class="hero-stat">
-            <strong>130.000+</strong>
-            <span>Arbeitsplätze</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-panel">
-        <h3>Warum JAFZA so wichtig ist</h3>
-        <ul>
-          <li>Direkte Nähe zum Hafen Jebel Ali und zum Al Maktoum International Airport</li>
-          <li>Sehr gute Anbindung an globale Handelsrouten</li>
-          <li>Attraktiver Standort für internationale Unternehmen</li>
-          <li>Ein bedeutender Handels- und Logistikknotenpunkt der VAE</li>
-        </ul>
-      </div>
-    </div>
+    <nav class="nav">
+      <a href="#grundlagen">Grundlagen</a>
+      <a href="#strahlung">Strahlung</a>
+      <a href="#timeline">Zeitstrahl</a>
+      <a href="#faelle">Fallbeispiele</a>
+      <a href="#vergleich">Vergleich</a>
+      <a href="#lernen">Lerneffekte</a>
+      <a href="#vortrag">Vortragsnotizen</a>
+      <a href="#quellen">Quellen</a>
+    </nav>
   </header>
 
-  <section id="lage">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag">1. Lage der Sonderwirtschaftszone</div>
-        <h2>Strategische Lage mit direkter Verbindung zu Hafen, Flughafen und Weltmarkt</h2>
-        <p>
-          Die geografische Position ist einer der größten Vorteile der Jebel Ali Free Zone.
-          Von Dubai aus können Unternehmen Märkte auf mehreren Kontinenten schnell erreichen.
-        </p>
+  <div class="ad-strip">
+    <div class="ad-banner">
+      <span class="ad-label">Anzeige</span>
+      <div>
+        <strong>PhysikPlus Lernkarten: Kernenergie, Halbwertszeit & Strahlung</strong>
+        <p>Fiktive Demo-Anzeige für ein Lernmaterial. Nicht als Quelle verwenden.</p>
       </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-body">
-            <h3>Warum die Lage so stark ist</h3>
-            <p>
-              Die JAFZA liegt im Westen von Dubai direkt neben dem Hafen Jebel Ali,
-              dem größten Hafen im Nahen Osten.
-            </p>
-            <p>
-              Zusätzlich liegt die Zone zwischen Hafen und Al Maktoum International Airport.
-              Dadurch können Waren schnell per Schiff, Flugzeug und Straße transportiert werden.
-            </p>
-            <p>
-              Die Fläche beträgt etwa 57 km². Weil Dubai zwischen Europa, Asien und Afrika liegt,
-              ist die Zone ein idealer Ausgangspunkt für internationalen Handel.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-image"
-            src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=80"
-            alt="Hafen und Logistik in Dubai"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="standort" style="background:#f1f5f9;">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag">2. Standortfaktoren</div>
-        <h2>Warum internationale Unternehmen sich dort ansiedeln</h2>
-        <p>
-          Die Zone verbindet wirtschaftliche Vorteile mit moderner Infrastruktur und globaler Erreichbarkeit.
-        </p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-body">
-            <h3>Wirtschaftliche Vorteile</h3>
-            <ul class="list">
-              <li><strong>0 % Import- und Exportzölle</strong> innerhalb der Zone</li>
-              <li><strong>Keine Beschränkung</strong> für ausländische Firmenbesitzer</li>
-              <li><strong>Attraktive Bedingungen</strong> für internationale Investoren</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h3>Moderne Infrastruktur</h3>
-            <ul class="list">
-              <li><strong>Direkte Nähe</strong> zu Hafen, Flughafen und Autobahnen</li>
-              <li><strong>Lagerhallen, Büros und Industrieflächen</strong> in großer Zahl</li>
-              <li><strong>Schnelle Transportwege</strong> für Warenströme</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h3>Globale Vernetzung</h3>
-            <ul class="list">
-              <li><strong>Nähe zu Handelsrouten</strong> zwischen Kontinenten</li>
-              <li><strong>Standortvorteil</strong> zwischen Europa, Asien und Afrika</li>
-              <li><strong>Besonders attraktiv</strong> für Logistik und Export</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="wirtschaft">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag">3. Schwerpunkt der Wirtschaft</div>
-        <h2>Viele internationale Firmen aus Handel, Logistik und Industrie</h2>
-        <p>
-          In der JAFZA arbeiten Unternehmen aus verschiedenen Wirtschaftsbereichen, vor allem dort,
-          wo schnelle Lieferketten und internationale Märkte entscheidend sind.
-        </p>
-      </div>
-
-      <div class="grid-2">
-        <div class="info-box">
-          <h3>Typische Branchen</h3>
-          <div class="pill-grid">
-            <div class="pill">Logistik und Transport</div>
-            <div class="pill">Handel und Export</div>
-            <div class="pill">Elektronik</div>
-            <div class="pill">Automobilindustrie</div>
-            <div class="pill">Petrochemie</div>
-            <div class="pill">Lebensmittelindustrie</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            class="card-image"
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
-            alt="Container und internationale Logistik"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="daten" class="stats-section">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag" style="color:#7dd3fc;">4. Zentrale Wirtschaftsdaten</div>
-        <h2>Wichtige Zahlen zur Jebel Ali Free Zone</h2>
-        <p>
-          Die wirtschaftliche Bedeutung der Zone zeigt sich besonders deutlich in ihren Kennzahlen.
-        </p>
-      </div>
-
-      <div class="stats-cards">
-        <div class="stat-card">
-          <div class="num">1985</div>
-          <div class="label">Gründungsjahr der Sonderwirtschaftszone</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">10.000+</div>
-          <div class="label">Unternehmen aus mehr als 150 Ländern</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">130.000+</div>
-          <div class="label">Arbeitsplätze in der Zone</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">100+</div>
-          <div class="label">Große internationale Konzerne mit Standorten</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="bedeutung">
-    <div class="container">
-      <div class="section-head">
-        <div class="tag">5. Bedeutung der Zone</div>
-        <h2>Ein globaler Handels- und Logistikknotenpunkt der VAE</h2>
-        <p>
-          Die JAFZA ist weit mehr als nur ein Industriegebiet. Sie ist ein zentraler Bestandteil des
-          internationalen Handels der Vereinigten Arabischen Emirate.
-        </p>
-      </div>
-
-      <div class="highlight">
-        <h3>Zusammenfassung</h3>
-        <ul>
-          <li>Eine der größten Sonderwirtschaftszonen der Welt</li>
-          <li>Wichtiger globaler Handels- und Logistikstandort</li>
-          <li>Entscheidend für den internationalen Handel der VAE</li>
-          <li>Starker und attraktiver Standort für internationale Unternehmen</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="steckbrief" style="padding-top: 20px;">
-  <div class="container">
-    <div class="section-head">
-      <div class="tag">6. Steckbrief</div>
-      <h2>Steckbrief zur Präsentation</h2>
-      <p>
-        Dieser Steckbrief fasst die wichtigsten Informationen zur Jebel Ali Free Zone kurz und übersichtlich zusammen
-        und eignet sich gut für eine Präsentation in Partnerarbeit.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-body">
-        <h3>Jebel Ali Free Zone (JAFZA) – Steckbrief</h3>
-        <ul class="list">
-          <li><strong>Name:</strong> Jebel Ali Free Zone (JAFZA)</li>
-          <li><strong>Ort:</strong> Dubai, Vereinigte Arabische Emirate (VAE)</li>
-          <li><strong>Gründung:</strong> 1985</li>
-          <li><strong>Größe:</strong> etwa 57 km²</li>
-          <li><strong>Lage:</strong> direkt am Hafen Jebel Ali und nahe dem Al Maktoum International Airport</li>
-          <li><strong>Besondere Vorteile:</strong> 0 % Import- und Exportzölle, sehr gute Infrastruktur, internationale Anbindung</li>
-          <li><strong>Wichtige Branchen:</strong> Logistik, Handel, Elektronik, Automobilindustrie, Petrochemie, Lebensmittelindustrie</li>
-          <li><strong>Unternehmen:</strong> über 10.000 Firmen aus mehr als 150 Ländern</li>
-          <li><strong>Arbeitsplätze:</strong> mehr als 130.000</li>
-          <li><strong>Bedeutung:</strong> wichtiger globaler Handels- und Logistikknotenpunkt der VAE</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid-2" style="margin-top: 24px;">
-      <div class="card">
-        <div class="card-body">
-          <h3>Mögliche Gliederung 1</h3>
-          <ul class="list">
-            <li>Lage der Sonderwirtschaftszone</li>
-            <li>Warum die Lage wichtig ist</li>
-            <li>Standortfaktoren und Vorteile für Unternehmen</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h3>Mögliche Gliederung 2</h3>
-          <ul class="list">
-            <li>Wirtschaftliche Schwerpunkte</li>
-            <li>Zentrale Wirtschaftsdaten</li>
-            <li>Bedeutung der JAFZA für Dubai und die VAE</li>
-          </ul>
-        </div>
-      </div>
+      <span class="ad-button">Mehr erfahren</span>
     </div>
   </div>
-</section>
+
+  <div class="layout">
+    <main>
+      <article class="hero">
+        <div class="eyebrow">Dossier für den Unterricht</div>
+        <h1>Was passiert bei Atomunfällen wirklich?</h1>
+        <p class="lead">Atomunfälle sind keine normalen Industrieunfälle. Sie verbinden Technik, Physik, menschliche Entscheidungen und langfristige Folgen durch radioaktive Stoffe.</p>
+        <p>
+          Bei schweren Atomunfällen geht es fast immer um eine zentrale Frage: Wird die entstehende Wärme sicher kontrolliert? In einem Kernreaktor entsteht durch Kernspaltung sehr viel Energie. Auch nach dem Abschalten verschwindet diese Energie nicht sofort, weil radioaktive Spaltprodukte weiter zerfallen und Nachzerfallswärme erzeugen. Wenn Kühlung, Stromversorgung oder Sicherheitskultur versagen, kann aus einem technischen Problem eine Katastrophe werden.
+        </p>
+        <p class="byline">Für das Referat geeignet: Einstieg, Physik-Erklärung, historischer Zeitstrahl, vier Fallbeispiele und Schlussteil.</p>
+      </article>
+
+      <section id="grundlagen">
+        <div class="section-head">
+          <div class="eyebrow">Grundlagen</div>
+          <h2>Was ist ein Atomunfall?</h2>
+          <p class="small">Ein Atomunfall ist ein Ereignis in einer kerntechnischen Anlage, bei dem radioaktive Stoffe freigesetzt werden können oder wichtige Sicherheitsbarrieren beschädigt werden.</p>
+        </div>
+
+        <div class="definition">
+          <strong>Definition einfach erklärt:</strong> Ein Atomunfall entsteht nicht nur, wenn ein Reaktor „explodiert“. Schon der Verlust von Kühlung, starke Beschädigung von Brennstäben oder unkontrollierte Freisetzung radioaktiver Stoffe kann ein schwerer nuklearer Unfall sein.
+        </div>
+
+        <p>
+          In Kernkraftwerken wird Wärme durch Kernspaltung erzeugt. Diese Wärme erhitzt Wasser, daraus entsteht Dampf, und der Dampf treibt Turbinen zur Stromerzeugung an. Der physikalische Prozess ist also ähnlich wie bei anderen Kraftwerken: Eine Turbine wird durch Dampf bewegt. Der Unterschied liegt in der Wärmequelle. Bei einem Kohlekraftwerk verbrennt Kohle, bei einem Kernkraftwerk werden Atomkerne gespalten.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <strong>Kernspaltung</strong>
+            Schwere Atomkerne werden gespalten. Dabei entstehen Energie, Neutronen und radioaktive Spaltprodukte.
+          </div>
+          <div class="info-card">
+            <strong>Kettenreaktion</strong>
+            Freigesetzte Neutronen können weitere Spaltungen auslösen. Im Reaktor muss diese Reaktion kontrolliert bleiben.
+          </div>
+          <div class="info-card">
+            <strong>Kühlung</strong>
+            Die Wärme muss ständig abgeführt werden. Ohne Kühlung können Brennstäbe überhitzen und beschädigt werden.
+          </div>
+        </div>
+
+        <h3>Warum ist Nachzerfallswärme so wichtig?</h3>
+        <p>
+          Ein Reaktor kann zwar abgeschaltet werden, aber die radioaktiven Spaltprodukte im Brennstoff zerfallen weiter. Dabei entsteht weiter Wärme. Diese Nachzerfallswärme ist am Anfang noch stark genug, um den Reaktorkern zu beschädigen, wenn die Kühlung nicht funktioniert. Deshalb brauchen Kernkraftwerke auch nach einer Schnellabschaltung Strom, Pumpen und Notkühlung.
+        </p>
+
+        <div class="danger-box">
+          <strong>Merksatz fürs Referat:</strong> Bei vielen Atomunfällen war nicht die Kernspaltung allein das Problem, sondern die fehlende Kontrolle der Wärme nach dem Abschalten.
+        </div>
+      </section>
+
+      <section id="strahlung">
+        <div class="section-head">
+          <div class="eyebrow">Physik der Strahlung</div>
+          <h2>Radioaktivität, Kontamination und Strahlung</h2>
+          <p class="small">Viele verwechseln diese Begriffe. Für ein gutes Referat müsst ihr sie sauber trennen.</p>
+        </div>
+
+        <h3>Radioaktivität</h3>
+        <p>
+          Radioaktive Stoffe besitzen instabile Atomkerne. Diese Kerne zerfallen und senden dabei ionisierende Strahlung aus. Ionisierende Strahlung kann Atome und Moleküle verändern. In lebenden Zellen kann sie dadurch Schäden verursachen.
+        </p>
+
+        <h3>Strahlung</h3>
+        <p>
+          Strahlung ist die Energie, die von radioaktiven Stoffen ausgeht. Wichtig sind zum Beispiel Alpha-, Beta- und Gammastrahlung. Alphastrahlung wird schon durch Papier oder Haut stark abgeschirmt, ist aber gefährlich, wenn radioaktive Stoffe eingeatmet oder verschluckt werden. Gammastrahlung ist durchdringender und braucht starke Abschirmung, zum Beispiel Beton oder Blei.
+        </p>
+
+        <h3>Kontamination</h3>
+        <p>
+          Kontamination bedeutet, dass radioaktive Stoffe auf Oberflächen, im Boden, in Wasser oder im Körper vorhanden sind. Das ist besonders problematisch, weil die radioaktiven Stoffe dann weiter Strahlung aussenden können. Nach Unfällen geht es deshalb nicht nur um direkte Strahlung, sondern auch um die Verbreitung radioaktiver Partikel.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Begriff</th>
+              <th>Bedeutung</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Radioaktivität</td>
+              <td>Eigenschaft instabiler Atomkerne, von selbst zu zerfallen</td>
+              <td>Radioaktives Jod oder Cäsium nach einem Unfall</td>
+            </tr>
+            <tr>
+              <td>Strahlung</td>
+              <td>Energie, die beim Zerfall ausgesendet wird</td>
+              <td>Gamma-Strahlung durch radioaktive Stoffe</td>
+            </tr>
+            <tr>
+              <td>Kontamination</td>
+              <td>Verschmutzung durch radioaktive Stoffe</td>
+              <td>Radioaktive Partikel auf Boden, Kleidung oder Pflanzen</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="notice">
+          <strong>Warum Jodtabletten?</strong> Bei bestimmten Unfällen kann radioaktives Jod freigesetzt werden. Stabiles Jod kann die Schilddrüse sättigen, damit sie weniger radioaktives Jod aufnimmt. Das hilft aber nur gegen radioaktives Jod, nicht gegen alle radioaktiven Stoffe.
+        </div>
+      </section>
+
+      <section id="ines">
+        <div class="section-head">
+          <div class="eyebrow">Einordnung</div>
+          <h2>Die INES-Skala</h2>
+          <p class="small">Die International Nuclear and Radiological Event Scale wird genutzt, um nukleare Ereignisse verständlich einzuordnen.</p>
+        </div>
+
+        <p>
+          Die INES-Skala reicht von 0 bis 7. Stufe 0 bedeutet eine Abweichung ohne Sicherheitsbedeutung. Stufe 7 ist ein schwerer Unfall mit weitreichender Freisetzung radioaktiver Stoffe. Tschernobyl und Fukushima Daiichi wurden als INES 7 eingestuft.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Stufe</th>
+              <th>Bezeichnung</th>
+              <th>Einordnung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>Abweichung</td><td>Keine oder sehr geringe sicherheitstechnische Bedeutung</td></tr>
+            <tr><td>1–3</td><td>Störung / ernster Störfall</td><td>Begrenzte Sicherheitsprobleme, aber meist ohne große Freisetzung</td></tr>
+            <tr><td>4–7</td><td>Unfall</td><td>Schäden an Anlage, Strahlenbelastung oder Freisetzung radioaktiver Stoffe</td></tr>
+            <tr><td>7</td><td>Schwerer Unfall</td><td>Große Freisetzung mit weitreichenden Folgen</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="timeline">
+        <div class="section-head">
+          <div class="eyebrow">Historischer Blick</div>
+          <h2>Zeitstrahl wichtiger Atomunfälle</h2>
+          <p class="small">Der Zeitstrahl zeigt, wie sich die Art der Unfälle und die Diskussion über Sicherheit verändert haben.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="time-item">
+            <div class="time-top"><span class="year">1957 · Kyschtym / Majak</span><span class="ines">INES 6</span></div>
+            <h3>Explosion eines Tanks mit radioaktivem Abfall</h3>
+            <p>In der Sowjetunion versagte die Kühlung eines Tanks mit hochradioaktivem Abfall. Der Tank explodierte und verteilte radioaktive Stoffe in der Umgebung.</p>
+          </div>
+          <div class="time-item">
+            <div class="time-top"><span class="year">1957 · Windscale</span><span class="ines">INES 5</span></div>
+            <h3>Brand in einem britischen Reaktor</h3>
+            <p>In Großbritannien brannte ein Reaktorkern. Radioaktive Stoffe gelangten in die Atmosphäre. Der Unfall zeigte, wie gefährlich unzureichende Temperaturkontrolle sein kann.</p>
+          </div>
+          <div class="time-item">
+            <div class="time-top"><span class="year">1979 · Three Mile Island</span><span class="ines">INES 5</span></div>
+            <h3>Teilweise Kernschmelze in den USA</h3>
+            <p>Ein Ventilproblem, Kühlmittelverlust und Fehlinterpretationen durch das Personal führten zu schweren Schäden am Reaktorkern.</p>
+          </div>
+          <div class="time-item">
+            <div class="time-top"><span class="year">1986 · Tschernobyl</span><span class="ines">INES 7</span></div>
+            <h3>Explosion und Brand während eines Tests</h3>
+            <p>Ein Sicherheitstest geriet außer Kontrolle. Der Reaktor wurde zerstört, Graphit brannte und große Mengen radioaktiver Stoffe wurden freigesetzt.</p>
+          </div>
+          <div class="time-item">
+            <div class="time-top"><span class="year">1999 · Tokaimura</span><span class="ines">INES 4</span></div>
+            <h3>Kritikalitätsunfall in Japan</h3>
+            <p>In einer Brennstoffanlage kam es durch falsche Arbeitsabläufe zu einer unkontrollierten Kettenreaktion. Arbeiter wurden stark bestrahlt.</p>
+          </div>
+          <div class="time-item">
+            <div class="time-top"><span class="year">2011 · Fukushima Daiichi</span><span class="ines">INES 7</span></div>
+            <h3>Kühlungsausfall nach Erdbeben und Tsunami</h3>
+            <p>Nach dem Tsunami fielen Stromversorgung und Notkühlung aus. Mehrere Reaktoren wurden beschädigt und es kam zu Wasserstoffexplosionen.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faelle">
+        <div class="section-head">
+          <div class="eyebrow">Fallbeispiele</div>
+          <h2>Die wichtigsten Fälle genauer erklärt</h2>
+          <p class="small">Für eure Präsentation reichen diese Fälle. Sie decken unterschiedliche Unfalltypen ab.</p>
+        </div>
+
+        <div class="case">
+          <h3>Kyschtym / Majak 1957</h3>
+          <div class="case-meta"><span class="pill">Sowjetunion</span><span class="pill">Wiederaufarbeitung</span><span class="pill">radioaktiver Abfall</span></div>
+          <p>
+            Der Kyschtym-Unfall passierte in der kerntechnischen Anlage Majak. Dort wurden radioaktive Abfälle gelagert. Ein Kühlsystem eines Tanks fiel aus. Durch die Zerfallswärme erhitzte sich der Inhalt so stark, dass es zu einer chemischen Explosion kam. Radioaktive Stoffe wurden freigesetzt und ein großes Gebiet wurde kontaminiert.
+          </p>
+          <div class="two-col">
+            <div><strong>Physikalischer Kern:</strong><p>Radioaktiver Abfall erzeugt weiterhin Wärme. Ohne Kühlung kann sich Material gefährlich erhitzen.</p></div>
+            <div><strong>Historische Bedeutung:</strong><p>Der Unfall wurde lange geheim gehalten. Er zeigt, dass auch Anlagen außerhalb von Kraftwerken schwere Risiken haben.</p></div>
+          </div>
+        </div>
+
+        <div class="case">
+          <h3>Three Mile Island 1979</h3>
+          <div class="case-meta"><span class="pill">USA</span><span class="pill">Kernkraftwerk</span><span class="pill">teilweise Kernschmelze</span></div>
+          <p>
+            Bei Three Mile Island blieb ein Ventil im Kühlsystem offen. Dadurch ging Kühlmittel verloren. Gleichzeitig deuteten die Bediener die Anzeigen falsch und schalteten teilweise Systeme ab, die eigentlich hilfreich gewesen wären. Der Reaktorkern wurde stark beschädigt, aber die Freisetzung radioaktiver Stoffe blieb im Vergleich zu Tschernobyl und Fukushima gering.
+          </p>
+          <div class="two-col">
+            <div><strong>Physikalischer Kern:</strong><p>Wenn der Kern nicht ausreichend mit Kühlmittel bedeckt ist, überhitzen Brennstäbe und können schmelzen.</p></div>
+            <div><strong>Lerneffekt:</strong><p>Bedienoberflächen, Notfalltraining und klare Kommunikation wurden wichtiger.</p></div>
+          </div>
+        </div>
+
+        <div class="case">
+          <h3>Tschernobyl 1986</h3>
+          <div class="case-meta"><span class="pill">Ukraine / damalige Sowjetunion</span><span class="pill">RBMK-Reaktor</span><span class="pill">Explosion und Brand</span></div>
+          <p>
+            In Tschernobyl sollte ein Test zeigen, ob die Turbine nach einem Stromausfall noch kurzzeitig genug Energie liefern kann. Der Test wurde unter riskanten Bedingungen durchgeführt. Durch Bedienfehler und problematische Eigenschaften des Reaktortyps stieg die Leistung extrem schnell. Der Reaktor explodierte, der Graphit im Reaktorkern brannte und radioaktive Stoffe wurden über weite Gebiete verteilt.
+          </p>
+          <div class="two-col">
+            <div><strong>Physikalischer Kern:</strong><p>Eine unkontrollierte Leistungssteigerung führte zu extremer Hitze, Dampfexplosionen und Zerstörung des Reaktors.</p></div>
+            <div><strong>Folgen:</strong><p>Evakuierung, Sperrzone, Strahlenkrankheit bei Einsatzkräften und langfristige Belastung vieler Regionen.</p></div>
+          </div>
+        </div>
+
+        <div class="case">
+          <h3>Fukushima Daiichi 2011</h3>
+          <div class="case-meta"><span class="pill">Japan</span><span class="pill">Erdbeben und Tsunami</span><span class="pill">Kühlungsausfall</span></div>
+          <p>
+            Die Reaktoren schalteten sich nach dem Erdbeben automatisch ab. Das Problem kam danach: Der Tsunami überflutete die Anlage und zerstörte wichtige Strom- und Notstromsysteme. Ohne funktionierende Pumpen konnte die Nachzerfallswärme nicht ausreichend abgeführt werden. Dadurch wurden Reaktorkerne beschädigt, Wasserstoff entstand und explodierte in mehreren Gebäuden.
+          </p>
+          <div class="two-col">
+            <div><strong>Physikalischer Kern:</strong><p>Nachzerfallswärme braucht aktive oder passive Kühlung. Ohne Stromversorgung wird das sehr gefährlich.</p></div>
+            <div><strong>Lerneffekt:</strong><p>Kernanlagen müssen besser gegen extreme Naturereignisse und langanhaltenden Stromausfall geschützt werden.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vergleich">
+        <div class="section-head">
+          <div class="eyebrow">Vergleich</div>
+          <h2>Unfälle im direkten Vergleich</h2>
+          <p class="small">Diese Tabelle ist gut für eine Präsentationsfolie geeignet.</p>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Unfall</th>
+              <th>Hauptursache</th>
+              <th>Physikalisches Problem</th>
+              <th>Lerneffekt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Kyschtym 1957</td>
+              <td>Kühlung eines Abfalltanks versagte</td>
+              <td>Zerfallswärme erhitzte radioaktiven Abfall</td>
+              <td>Auch Abfalllager brauchen dauerhafte Kontrolle</td>
+            </tr>
+            <tr>
+              <td>Three Mile Island 1979</td>
+              <td>Technischer Defekt und Bedienfehler</td>
+              <td>Kühlmittelverlust und Kernüberhitzung</td>
+              <td>Bessere Anzeigen, Training und Notfallabläufe</td>
+            </tr>
+            <tr>
+              <td>Tschernobyl 1986</td>
+              <td>Riskanter Test, Bedienfehler, Reaktordesign</td>
+              <td>Unkontrollierter Leistungsanstieg</td>
+              <td>Sicherheitskultur und internationales Meldewesen</td>
+            </tr>
+            <tr>
+              <td>Fukushima 2011</td>
+              <td>Tsunami zerstörte Stromversorgung</td>
+              <td>Nachzerfallswärme ohne ausreichende Kühlung</td>
+              <td>Schutz gegen Naturkatastrophen und Stromausfall</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="lernen">
+        <div class="section-head">
+          <div class="eyebrow">Folgen</div>
+          <h2>Was hat man historisch daraus gelernt?</h2>
+        </div>
+
+        <ol>
+          <li><strong>Kühlung darf nicht von nur einem System abhängen.</strong> Es braucht mehrere unabhängige Notkühlsysteme.</li>
+          <li><strong>Stromversorgung muss abgesichert sein.</strong> Notstromaggregate, Batterien und Schutz gegen Überflutung sind entscheidend.</li>
+          <li><strong>Bediener müssen Krisen trainieren.</strong> Three Mile Island zeigte, dass unklare Anzeigen und Stress Fehlentscheidungen auslösen können.</li>
+          <li><strong>Sicherheitskultur ist genauso wichtig wie Technik.</strong> Tschernobyl zeigte, dass riskante Tests und Druck von oben gefährlich werden können.</li>
+          <li><strong>Transparenz rettet Vertrauen.</strong> Verharmlosung oder Geheimhaltung verschlimmern die Folgen für Bevölkerung und Politik.</li>
+          <li><strong>Radioaktiver Abfall bleibt ein Langzeitproblem.</strong> Kyschtym zeigt, dass nicht nur Reaktoren, sondern auch Abfalllager gefährlich sein können.</li>
+        </ol>
+
+        <div class="danger-box">
+          <strong>Guter Schlusssatz:</strong> Atomunfälle zeigen, dass Kernenergie nicht nur eine technische Frage ist, sondern auch eine Frage von Verantwortung, Sicherheitskultur und ehrlicher Information.
+        </div>
+      </section>
+
+      <section id="vortrag">
+        <div class="section-head">
+          <div class="eyebrow">Vortragsnotizen</div>
+          <h2>Kurze Notizen für Gabriel und Erwin</h2>
+        </div>
+
+        <div class="two-col">
+          <div class="info-card">
+            <strong>Gabriel: Physik-Teil</strong>
+            <ul>
+              <li>Kernspaltung erzeugt Wärme.</li>
+              <li>Die Kettenreaktion muss kontrolliert werden.</li>
+              <li>Nach dem Abschalten entsteht weiter Nachzerfallswärme.</li>
+              <li>Wenn Kühlung ausfällt, können Brennstäbe überhitzen.</li>
+              <li>Kontamination bedeutet: radioaktive Stoffe sind am falschen Ort.</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <strong>Erwin: Historischer Teil</strong>
+            <ul>
+              <li>1957 Kyschtym: Abfalltank explodiert.</li>
+              <li>1979 Three Mile Island: teilweise Kernschmelze.</li>
+              <li>1986 Tschernobyl: Explosion und Brand.</li>
+              <li>2011 Fukushima: Tsunami zerstört Kühlung.</li>
+              <li>Jeder Unfall führte zu strengeren Sicherheitsdiskussionen.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="quellen">
+        <div class="section-head">
+          <div class="eyebrow">Quellen</div>
+          <h2>Seriöse Quellen</h2>
+          <p class="small">Die Anzeigen auf dieser Seite sind keine Quellen. Für das Referat sollten nur diese Quellen genutzt werden.</p>
+        </div>
+
+        <div class="source-list">
+          <a href="https://www.iaea.org/resources/databases/international-nuclear-and-radiological-event-scale" target="_blank" rel="noopener">
+            <strong>IAEA – International Nuclear and Radiological Event Scale</strong>
+            <span>Offizielle Erklärung der INES-Skala.</span>
+          </a>
+          <a href="https://www.iaea.org/publications/10962/the-fukushima-daiichi-accident" target="_blank" rel="noopener">
+            <strong>IAEA – The Fukushima Daiichi Accident</strong>
+            <span>Internationaler Bericht zum Fukushima-Daiichi-Unfall.</span>
+          </a>
+          <a href="https://www.unscear.org/unscear/en/chernobyl.html" target="_blank" rel="noopener">
+            <strong>UNSCEAR – The Chornobyl Accident</strong>
+            <span>Wissenschaftliche Bewertung zu Strahlenfolgen und Tschernobyl.</span>
+          </a>
+          <a href="https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/3mile-isle" target="_blank" rel="noopener">
+            <strong>U.S. NRC – Three Mile Island Accident</strong>
+            <span>Informationen der amerikanischen Atomaufsichtsbehörde.</span>
+          </a>
+          <a href="https://www.britannica.com/event/Kyshtym-disaster" target="_blank" rel="noopener">
+            <strong>Encyclopaedia Britannica – Kyshtym Disaster</strong>
+            <span>Überblick zum Kyschtym-Unfall.</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <div class="side-card">
+        <h3>Kurze Fakten</h3>
+        <ul>
+          <li>Schwere Atomunfälle sind selten, aber folgenreich.</li>
+          <li>Die höchste INES-Stufe ist 7.</li>
+          <li>Tschernobyl und Fukushima wurden als INES 7 eingestuft.</li>
+          <li>Nachzerfallswärme ist ein zentraler Risikofaktor.</li>
+        </ul>
+      </div>
+
+      <div class="ad-card">
+        <div class="fake-logo">RadiaSafe Home</div>
+        <h3>Strahlung verstehen – nicht raten</h3>
+        <p>Fiktive Demo-Anzeige für ein Messgerät. Dieser Kasten dient nur dazu, die Seite realistischer wie ein Infoportal wirken zu lassen.</p>
+        <span class="ad-link">Anzeige ansehen</span>
+      </div>
+
+      <div class="side-card">
+        <h3>Begriffe für die Präsentation</h3>
+        <ul>
+          <li><strong>Kernschmelze:</strong> Brennstoff überhitzt und schmilzt teilweise.</li>
+          <li><strong>Notkühlung:</strong> Systeme zur Kühlung bei Störungen.</li>
+          <li><strong>Kontamination:</strong> radioaktive Verschmutzung.</li>
+          <li><strong>Evakuierung:</strong> Menschen verlassen vorsorglich ein Gebiet.</li>
+        </ul>
+      </div>
+
+      <div class="ad-card">
+        <div class="fake-logo">EnergieJournal Kompakt</div>
+        <h3>Monatlicher Energie-Newsletter</h3>
+        <p>Fiktive Demo-Anzeige. Themen: Stromnetze, Energiepolitik, Kraftwerkstechnik und Wissenschaft für Schüler erklärt.</p>
+        <span class="ad-link">Kostenlos testen</span>
+      </div>
+
+      <div class="side-card">
+        <h3>Mini-Gliederung</h3>
+        <ol>
+          <li>Einleitung: Warum Atomunfälle wichtig sind</li>
+          <li>Physik: Kernspaltung und Kühlung</li>
+          <li>Zeitstrahl: historische Entwicklung</li>
+          <li>Fallbeispiele: Tschernobyl & Fukushima</li>
+          <li>Fazit: Was wurde gelernt?</li>
+        </ol>
+      </div>
+
+      <div class="ad-card">
+        <div class="fake-logo">Museum Techniknacht</div>
+        <h3>Sonderausstellung: Energie im 20. Jahrhundert</h3>
+        <p>Fiktive Demo-Anzeige für eine Ausstellung. Passt optisch zur Seite, ist aber keine echte Quelle.</p>
+        <span class="ad-link">Programm ansehen</span>
+      </div>
+    </aside>
+  </div>
 
   <footer>
-    <div class="container footer-inner">
-      <p><strong>Jebel Ali Free Zone | Dubai</strong></p>
-      <p>jafza international | official website</p>
-    </div>
+    <strong>Atomunfälle im historischen Blick</strong>
+    <p>Informationsseite für ein Physik-Referat. Inhalte aus seriösen Quellen zusammengefasst und verständlich formuliert. Anzeigen auf dieser Seite sind als Demo-Anzeigen gekennzeichnet und keine Quellen.</p>
+    <div class="credit">Erstellt mit ChatGPT</div>
   </footer>
-
 </body>
 </html>
-
